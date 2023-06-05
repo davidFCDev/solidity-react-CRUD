@@ -3,6 +3,7 @@ App = {
 
   init: () => {
     App.loadEthereum();
+    App.loadAccount();
     App.loadContract();
   },
 
@@ -19,6 +20,13 @@ App = {
     }
   },
 
+  loadAccount: async () => {
+    const accounts = await window.ethereum.request({
+      method: "eth_requestAccounts",
+    });
+    App.account = accounts[0];
+  },
+
   loadContract: async () => {
     const response = await fetch("TasksContract.json");
     const taskContractJSON = await response.json();
@@ -29,12 +37,16 @@ App = {
     App.tasksContract = await App.contracts.tasksContract.deployed();
   },
 
-  createTask: async (title, description) => {
-    const result = await App.tasksContract.createTask(title, description);
-    console.log(result);
-  }
+  render: () => {
+    document.getElementById("account").innerText = App.account;
+  },
 
-  
+  createTask: async (title, description) => {
+    const result = await App.tasksContract.createTask(title, description, {
+      from: App.account,
+    });
+    console.log(result.logs[0].args);
+  },
 };
 
 App.init();
