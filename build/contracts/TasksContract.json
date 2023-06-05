@@ -7604,14 +7604,71 @@
   },
   "networks": {
     "5777": {
-      "events": {},
+      "events": {
+        "0x6549102bed7d1bb5ec529ee14e2ca60ffc1f47f66d4cc6ca713220613cc64c25": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "title",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "description",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "done",
+              "type": "bool"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "createdAt",
+              "type": "uint256"
+            }
+          ],
+          "name": "TaskCreated",
+          "type": "event"
+        },
+        "0x3a359256e016dcfa8426ec503e08484999d6fcfb8c0f6084dc9e63374d838429": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "done",
+              "type": "bool"
+            }
+          ],
+          "name": "TaskToggledDone",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0xf063ec26D9dd4840c37cA21A40bE5D9d32313cbB",
-      "transactionHash": "0x6e340625ba1eafe95252b47f191b9fc8b35c97ff69bc331904bff68f7b4c44a9"
+      "address": "0x8DF2568Cb5472FDF13c393476F9c2019A9BBf3eF",
+      "transactionHash": "0xc5d486f62ea2d565dfbf455d3d5d6f873e8fc8fb552dd546bdaa96e202b43a35"
     }
   },
   "schemaVersion": "3.4.14",
-  "updatedAt": "2023-06-02T15:13:53.947Z",
+  "updatedAt": "2023-06-05T09:52:40.346Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
