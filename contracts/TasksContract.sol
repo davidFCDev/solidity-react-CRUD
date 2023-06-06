@@ -27,10 +27,9 @@ contract TasksContract {
         createTask("my first task", "my first description");
     }
 
-    function createTask(
-        string memory _title,
-        string memory _description
-    ) public {
+    function createTask(string memory _title, string memory _description)
+        public
+    {
         tasksCounter++;
         tasks[tasksCounter] = Task(
             tasksCounter,
